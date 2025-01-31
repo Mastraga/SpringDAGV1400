@@ -5,13 +5,13 @@ using UnityEngine;
 public class ApplyForce : MonoBehaviour
 {
     private Rigidbody rb;
-
+    public int speed = 500;
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        rb.AddForce(Vector3.right * 500);
+        rb.AddForce(Vector3.right * speed);
         
     }
 
