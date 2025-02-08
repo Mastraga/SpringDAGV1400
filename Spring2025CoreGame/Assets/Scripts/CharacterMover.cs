@@ -28,6 +28,8 @@ public class CharacterMover : MonoBehaviour
         movementVector.x = Input.GetAxis("Horizontal");
         movementVector *= (moveSpeed * Time.deltaTime);
         controller.Move(movementVector);
+        if (movementVector.x > 0) transform.rotation = Quaternion.Euler(0, 0, 0);
+        if (movementVector.x < 0) transform.rotation = Quaternion.Euler(0, 180, 0);
     }
 
     private void KeepCharacterOnZAxis()
