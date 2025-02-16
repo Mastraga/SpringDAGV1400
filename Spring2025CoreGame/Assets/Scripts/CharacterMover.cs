@@ -23,25 +23,36 @@ public class CharacterMover : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Debug.Log(controller.isGrounded + "Start of Update");
+        
         MoveCharacter();
         ApplyGravity();
         KeepCharacterOnZAxis();
+        if (controller.isGrounded && Input.GetButtonDown("Jump"))
+        {
+            velocity.y = Mathf.Sqrt(jumpForce * -2f * gravity);
+        }
+        //Debug.Log(controller.isGrounded + "End of Update");
     }
 
     private void MoveCharacter()
     {
+        //Debug.Log(controller.isGrounded + "Before MoveCharacter"); //On the ground
         var moveInput = Input.GetAxis("Horizontal");
-        var move = new Vector3 (moveInput, 0f, 0f) * (moveSpeed * Time.deltaTime);
+        var move = new Vector3 (moveInput, 0.0f, 0.0f) * (moveSpeed * Time.deltaTime);
         controller.Move(move);
+        //Debug.Log(controller.isGrounded + "After MoveCharacter");  //No longer on the ground??
+
+        //It might be that something about the Move() function temporarily takes the character controller off the ground
 
         if (moveInput > 0) transform.rotation = Quaternion.Euler(0, 0, 0);
         if (moveInput < 0) transform.rotation = Quaternion.Euler(0, 180, 0);
 
         // Jumping
-        if (controller.isGrounded && Input.GetButtonDown("Jump"))
+        /*if (controller.isGrounded && Input.GetButtonDown("Jump"))
         {
             velocity.y = Mathf.Sqrt(jumpForce * -2f * gravity);
-        }
+        }*/
        
     }
 
@@ -54,6 +65,7 @@ public class CharacterMover : MonoBehaviour
 
     private void ApplyGravity()
     {
+        //controller.Move(velocity * Time.deltaTime);
         if (!controller.isGrounded)
         {
             velocity.y += gravity * Time.deltaTime;
@@ -64,8 +76,10 @@ public class CharacterMover : MonoBehaviour
             velocity.y = 0f;
             
         }
-
         controller.Move(velocity * Time.deltaTime);
+        
         Debug.Log(velocity.y);
+        
+        
     }
 }
