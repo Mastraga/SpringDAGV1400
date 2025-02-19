@@ -1,11 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class CharacterMover : MonoBehaviour
 {
     public float moveSpeed = 5f;
-    public float jumpForce = 8f;
+    public float jumpForce = 4f;
     public float gravity = -9.81f;
 
     private CharacterController controller;
@@ -39,7 +40,7 @@ public class CharacterMover : MonoBehaviour
     {
         //Debug.Log(controller.isGrounded + "Before MoveCharacter"); //On the ground
         var moveInput = Input.GetAxis("Horizontal");
-        var move = new Vector3 (moveInput, 0.0f, 0.0f) * (moveSpeed * Time.deltaTime);
+        var move = new Vector3 (moveInput, -0.0f, 0.0f) * (moveSpeed * Time.deltaTime);
         controller.Move(move);
         //Debug.Log(controller.isGrounded + "After MoveCharacter");  //No longer on the ground??
 
@@ -77,6 +78,7 @@ public class CharacterMover : MonoBehaviour
             
         }
         controller.Move(velocity * Time.deltaTime);
+        
         
         Debug.Log(velocity.y);
         
