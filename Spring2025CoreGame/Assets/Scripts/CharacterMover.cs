@@ -46,8 +46,6 @@ public class CharacterMover : MonoBehaviour
 
         //It might be that something about the Move() function temporarily takes the character controller off the ground
 
-        if (moveInput > 0) transform.rotation = Quaternion.Euler(0, 0, 0);
-        if (moveInput < 0) transform.rotation = Quaternion.Euler(0, 180, 0);
 
         // Jumping
         /*if (controller.isGrounded && Input.GetButtonDown("Jump"))
@@ -79,8 +77,6 @@ public class CharacterMover : MonoBehaviour
         }
         controller.Move(velocity * Time.deltaTime);
         
-        
-        Debug.Log(velocity.y);
         
         
     }
