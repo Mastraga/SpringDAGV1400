@@ -39,11 +39,5 @@ public class AnimateCharacter : MonoBehaviour
         }
         else { animator.SetTrigger("Idle"); }
 
-
-
-        if (Input.GetKeyDown(KeyCode.H))
-        {
-            animator.SetTrigger("Hit");
-        }
     }
 }
