@@ -20,5 +20,10 @@ public class SimpleImageBehaviour : MonoBehaviour
     void Update()
     {
         imageObj.fillAmount = dataObj.value;
+
+        /*if (imageObj.fillAmount > 1)
+        {
+            imageObj.fillAmount = 1;
+        }*/
     }
 }

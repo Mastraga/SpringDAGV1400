@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &615989094930998535
+--- !u!1 &8658484800743973868
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,39 +8,39 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 5721068009008122156}
-  - component: {fileID: 528830475270704435}
-  - component: {fileID: 1540722714367330828}
-  - component: {fileID: 2756163137469579176}
+  - component: {fileID: 8573450121556192193}
+  - component: {fileID: 1336233071542728856}
+  - component: {fileID: 3467957051746542006}
+  - component: {fileID: 443023676157627431}
   m_Layer: 0
-  m_Name: HealthObject
+  m_Name: ManaObject
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &5721068009008122156
+--- !u!4 &8573450121556192193
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 615989094930998535}
+  m_GameObject: {fileID: 8658484800743973868}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.363, y: 0.982, z: -0.186231}
-  m_LocalScale: {x: 5, y: 5, z: 5}
+  m_LocalPosition: {x: 11.37, y: 1.09, z: -3.642286}
+  m_LocalScale: {x: 4.03, y: 4.03, z: 4.03}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &528830475270704435
+--- !u!212 &1336233071542728856
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 615989094930998535}
+  m_GameObject: {fileID: 8658484800743973868}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -75,7 +75,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7293598183456022363, guid: 1ddc9afd21fec77489b1248d18f31b68, type: 3}
+  m_Sprite: {fileID: 4138223980208024357, guid: 5100b75572e484e458e4340e2afe9454, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -86,13 +86,13 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!65 &1540722714367330828
+--- !u!65 &3467957051746542006
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 615989094930998535}
+  m_GameObject: {fileID: 8658484800743973868}
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -105,15 +105,15 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.13, y: 0.14, z: 0.2}
-  m_Center: {x: 0, y: 0.02, z: 0}
---- !u!114 &2756163137469579176
+  m_Size: {x: 0.15, y: 0.15, z: 0.19999999}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &443023676157627431
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 615989094930998535}
+  m_GameObject: {fileID: 8658484800743973868}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4dad9c30c38faf340bca0364eca48d07, type: 3}
@@ -122,7 +122,7 @@ MonoBehaviour:
   triggerEvent:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 11400000, guid: 0959ed9307adcb346bfbf4834103877f, type: 2}
+      - m_Target: {fileID: 11400000, guid: 62b89e5f316911648af29443add88e28, type: 2}
         m_TargetAssemblyTypeName: SimpleFloatData, Assembly-CSharp
         m_MethodName: UpdateValue
         m_Mode: 4
@@ -130,7 +130,7 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
-          m_FloatArgument: 0.1
+          m_FloatArgument: -0.1
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2

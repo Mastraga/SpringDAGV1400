@@ -75,9 +75,6 @@ public class CharacterMover : MonoBehaviour
             velocity.y = 0f;
             
         }
-        controller.Move(velocity * Time.deltaTime);
-        
-        
-        
+        controller.Move(velocity * Time.deltaTime); 
     }
 }
