@@ -21,9 +21,9 @@ public class SimpleImageBehaviour : MonoBehaviour
     {
         imageObj.fillAmount = dataObj.value;
 
-        /*if (imageObj.fillAmount > 1)
+        if (imageObj.fillAmount > 1)
         {
-            imageObj.fillAmount = 1;
-        }*/
+            dataObj.value = 1;
+        }
     }
 }
