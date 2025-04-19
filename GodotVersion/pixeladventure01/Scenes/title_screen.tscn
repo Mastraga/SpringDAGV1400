@@ -1,0 +1,142 @@
+[gd_scene load_steps=15 format=3 uid="uid://bhs7y5aqhuypa"]
+
+[ext_resource type="Script" uid="uid://drgarbu61k4j3" path="res://Scenes/title_screen.gd" id="1_klylv"]
+[ext_resource type="Texture2D" uid="uid://yrqw025qidew" path="res://Pixel_Adventure_1/Main Characters/Ninja Frog/Idle (32x32).png" id="2_p3fck"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4gxqj"]
+atlas = ExtResource("2_p3fck")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_twnyg"]
+atlas = ExtResource("2_p3fck")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_55kwv"]
+atlas = ExtResource("2_p3fck")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_12m1t"]
+atlas = ExtResource("2_p3fck")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6vd4x"]
+atlas = ExtResource("2_p3fck")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n82rj"]
+atlas = ExtResource("2_p3fck")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0061g"]
+atlas = ExtResource("2_p3fck")
+region = Rect2(192, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8mikk"]
+atlas = ExtResource("2_p3fck")
+region = Rect2(224, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sqelc"]
+atlas = ExtResource("2_p3fck")
+region = Rect2(256, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w5sh6"]
+atlas = ExtResource("2_p3fck")
+region = Rect2(288, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o1e67"]
+atlas = ExtResource("2_p3fck")
+region = Rect2(320, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ycay6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4gxqj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_twnyg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_55kwv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_12m1t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6vd4x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n82rj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0061g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8mikk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sqelc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w5sh6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o1e67")
+}],
+"loop": true,
+"name": &"defaultFrog",
+"speed": 20.0
+}]
+
+[node name="TitleScreen" type="Node2D"]
+script = ExtResource("1_klylv")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(15.9873, 9.00438)
+color = Color(0.135016, 0.16139, 0.116053, 1)
+
+[node name="BoxContainer" type="BoxContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 272.0
+offset_top = 152.0
+offset_right = 368.0
+offset_bottom = 218.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="BoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Start" type="Button" parent="BoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Start Game"
+
+[node name="Quit" type="Button" parent="BoxContainer/VBoxContainer"]
+layout_mode = 2
+text = "Quit Game"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(160, 144)
+scale = Vector2(2.80926, 2.80926)
+sprite_frames = SubResource("SpriteFrames_ycay6")
+animation = &"defaultFrog"
+autoplay = "defaultFrog"
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
+position = Vector2(480, 144)
+scale = Vector2(2.80926, 2.80926)
+sprite_frames = SubResource("SpriteFrames_ycay6")
+animation = &"defaultFrog"
+autoplay = "defaultFrog"
+flip_h = true
+
+[connection signal="pressed" from="BoxContainer/VBoxContainer/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="BoxContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]

@@ -1,0 +1,63 @@
+[gd_scene load_steps=9 format=3 uid="uid://bfhfsv4nbs7oo"]
+
+[ext_resource type="Texture2D" uid="uid://f610uhd2cwsr" path="res://Pixel_Adventure_1/Traps/Fire/On (16x32).png" id="1_655vd"]
+[ext_resource type="Script" uid="uid://cefxhl5bxj0og" path="res://Scenes/Traps/fire_trap.gd" id="1_jdgdm"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jdgdm"]
+atlas = ExtResource("1_655vd")
+region = Rect2(0, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cdbap"]
+atlas = ExtResource("1_655vd")
+region = Rect2(16, 0, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ebbi2"]
+atlas = ExtResource("1_655vd")
+region = Rect2(32, 0, 16, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_84bnn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jdgdm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cdbap")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ebbi2")
+}],
+"loop": true,
+"name": &"fire_on",
+"speed": 20.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qkro5"]
+size = Vector2(16, 16)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bbd8i"]
+radius = 5.0
+height = 12.0
+
+[node name="FireTrap" type="StaticBody2D"]
+collision_mask = 2
+script = ExtResource("1_jdgdm")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_84bnn")
+animation = &"fire_on"
+autoplay = "fire_on"
+frame_progress = 0.0485843
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 8)
+shape = SubResource("RectangleShape2D_qkro5")
+
+[node name="Hurtbox" type="Area2D" parent="."]
+position = Vector2(0, 8)
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
+position = Vector2(0, -14)
+shape = SubResource("CapsuleShape2D_bbd8i")
