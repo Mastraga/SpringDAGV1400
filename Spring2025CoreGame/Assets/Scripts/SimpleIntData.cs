@@ -9,6 +9,8 @@ public class SimpleIntData : ScriptableObject
 
     public int value;
 
+    void Start() => value = 0;
+
     public void UpdateValue(int amount)
     {
         value += amount;
